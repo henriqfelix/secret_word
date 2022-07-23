@@ -95,8 +95,8 @@ function App() {
   };
 
   const clearLetterStates = () => {
-    setGuessedLetters = [];
-    setWrongLetters = [];
+    setGuessedLetters([]);
+    setWrongLetters([]);
   };
 
   useEffect(() => {
@@ -131,7 +131,7 @@ function App() {
           score={score}
         />
       )}
-      {gameStage === "end" && <GameOver retry={retry} />}
+      {gameStage === "end" && <GameOver retry={retry} score={score} />}
     </div>
   );
 }
